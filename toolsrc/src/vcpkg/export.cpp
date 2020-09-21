@@ -38,6 +38,7 @@ namespace vcpkg::Export
         <description>
             Vcpkg NuGet export
         </description>
+        <repository type="git" url="https://github.com/inviwo/inviwo.git"/>
     </metadata>
     <files>
         <file src="@RAW_EXPORTED_DIR@\installed\**" target="installed" />
