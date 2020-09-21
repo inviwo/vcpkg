@@ -353,8 +353,10 @@ namespace
 
             NugetReference nuget_ref(action);
             auto nuspec_path = paths.buildtrees / spec.name() / (spec.triplet().to_string() + ".nuspec");
-            paths.get_filesystem().write_contents(
-                nuspec_path, generate_nuspec(paths, action, nuget_ref), VCPKG_LINE_INFO);
+            auto nuspec = generate_nuspec(paths, action, nuget_ref);
+            paths.get_filesystem().write_contents(nuspec_path, nuspec, VCPKG_LINE_INFO);
+
+            System::print2("Nuspec generated:\n", nuspec, ".\n");
 
             const auto& nuget_exe = paths.get_tool_exe("nuget");
             System::CmdLineBuilder cmdline;
