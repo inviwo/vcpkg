@@ -367,6 +367,8 @@ namespace
                 .string_arg("-OutputDirectory")
                 .path_arg(paths.buildtrees)
                 .string_arg("-NoDefaultExcludes")
+                .string_arg("-Verbosity")
+                .string_arg("detailed")
                 .string_arg("-ForceEnglishOutput");
             if (!m_interactive) cmdline.string_arg("-NonInteractive");
 
@@ -395,6 +397,8 @@ namespace
                         .path_arg(nupkg_path)
                         .string_arg("-ApiKey")
                         .string_arg("AzureDevOps")
+                        .string_arg("-Verbosity")
+                        .string_arg("detailed")
                         .string_arg("-ForceEnglishOutput")
                         .string_arg("-Source")
                         .string_arg(write_src);
@@ -428,6 +432,8 @@ namespace
                         .path_arg(nupkg_path)
                         .string_arg("-ApiKey")
                         .string_arg("AzureDevOps")
+                        .string_arg("-Verbosity")
+                        .string_arg("detailed")
                         .string_arg("-ForceEnglishOutput")
                         .string_arg("-ConfigFile")
                         .path_arg(write_cfg);
